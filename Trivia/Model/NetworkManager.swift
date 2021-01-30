@@ -33,4 +33,20 @@ class NetworkManager {
             }
         }.resume()
     }
+    
+    func fetchQuestionsByCategory(categoryID: Int, _ completion: @escaping ([Question]) -> ()) {
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=25&category=\(categoryID)") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data {
+                do {
+                    let questionsJSON = try JSONDecoder().decode(Questions.self, from: data)
+                    
+                    completion(questionsJSON.results)
+                } catch {
+                    fatalError("Could not parse questions JSON.")
+                }
+            }
+        }.resume()
+    }
 }

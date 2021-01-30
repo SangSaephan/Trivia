@@ -22,10 +22,10 @@ class CategoriesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        viewModel.fetchCategories { (categories) in
+        viewModel.fetchCategories { [weak self] (categories) in
             DispatchQueue.main.async {
-                self.viewModel.categories = categories.sorted(by: {$0.name < $1.name})
-                self.tableView.reloadData()
+                self?.viewModel.categories = categories.sorted(by: {$0.name < $1.name})
+                self?.tableView.reloadData()
             }
         }
     }
@@ -46,6 +46,11 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let questionsVC = storyboard?.instantiateViewController(identifier: "QuestionsViewController") as! QuestionsViewController
+        
+        questionsVC.categoryID = viewModel.categories?[indexPath.row].id
+        
+        navigationController?.pushViewController(questionsVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

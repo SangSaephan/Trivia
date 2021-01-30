@@ -48,6 +48,105 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
         </scene>
+        <!--Questions View Controller-->
+        <scene sceneID="UI1-Je-lRk">
+            <objects>
+                <viewController storyboardIdentifier="QuestionsViewController" id="DzB-gD-DfQ" customClass="QuestionsViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ylP-js-r4y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GC-qb-wd8">
+                                <rect key="frame" x="8" y="204" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phX-ms-zdB">
+                                <rect key="frame" x="77" y="486" width="260" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4Vf-LA-W18"/>
+                                    <constraint firstAttribute="width" constant="260" id="uiS-Je-liO"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonTapped:" destination="DzB-gD-DfQ" eventType="touchUpInside" id="ZvQ-zH-J2l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLK-Ps-T5Z">
+                                <rect key="frame" x="77" y="556" width="260" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="b5H-YG-wiw"/>
+                                    <constraint firstAttribute="height" constant="60" id="u3d-vS-dnz"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonTapped:" destination="DzB-gD-DfQ" eventType="touchUpInside" id="fp2-0e-tDO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSr-L1-nxx">
+                                <rect key="frame" x="77" y="626" width="260" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="1yh-gg-ps2"/>
+                                    <constraint firstAttribute="height" constant="60" id="aWC-DE-TrQ"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonTapped:" destination="DzB-gD-DfQ" eventType="touchUpInside" id="cBj-KE-WMM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1r-Dj-hlH">
+                                <rect key="frame" x="77" y="696" width="260" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4sj-Pl-ddD"/>
+                                    <constraint firstAttribute="width" constant="260" id="sBL-K8-3iB"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonTapped:" destination="DzB-gD-DfQ" eventType="touchUpInside" id="yLC-35-gys"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="E1r-Dj-hlH" firstAttribute="top" secondItem="tSr-L1-nxx" secondAttribute="bottom" constant="10" id="2KR-DN-m5Q"/>
+                            <constraint firstItem="UPt-DS-gxN" firstAttribute="trailing" secondItem="2GC-qb-wd8" secondAttribute="trailing" constant="8" id="5j4-Kj-nD4"/>
+                            <constraint firstItem="tSr-L1-nxx" firstAttribute="top" secondItem="sLK-Ps-T5Z" secondAttribute="bottom" constant="10" id="77j-dx-dHg"/>
+                            <constraint firstItem="sLK-Ps-T5Z" firstAttribute="top" secondItem="phX-ms-zdB" secondAttribute="bottom" constant="10" id="BVx-mA-rGw"/>
+                            <constraint firstItem="2GC-qb-wd8" firstAttribute="top" secondItem="UPt-DS-gxN" secondAttribute="top" constant="160" id="O5m-5Y-AYS"/>
+                            <constraint firstItem="UPt-DS-gxN" firstAttribute="bottom" secondItem="E1r-Dj-hlH" secondAttribute="bottom" constant="106" id="c4e-y1-swz"/>
+                            <constraint firstItem="phX-ms-zdB" firstAttribute="centerX" secondItem="UPt-DS-gxN" secondAttribute="centerX" id="n1x-Dc-uRj"/>
+                            <constraint firstItem="2GC-qb-wd8" firstAttribute="leading" secondItem="UPt-DS-gxN" secondAttribute="leading" constant="8" id="rHk-po-KLz"/>
+                            <constraint firstItem="tSr-L1-nxx" firstAttribute="centerX" secondItem="UPt-DS-gxN" secondAttribute="centerX" id="rcT-4T-mZL"/>
+                            <constraint firstItem="sLK-Ps-T5Z" firstAttribute="centerX" secondItem="UPt-DS-gxN" secondAttribute="centerX" id="wZ4-gX-nDB"/>
+                            <constraint firstItem="E1r-Dj-hlH" firstAttribute="centerX" secondItem="UPt-DS-gxN" secondAttribute="centerX" id="xFO-6r-Sky"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UPt-DS-gxN"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerButton1" destination="phX-ms-zdB" id="ydD-8b-rwc"/>
+                        <outlet property="answerButton2" destination="sLK-Ps-T5Z" id="LBP-bg-l7Q"/>
+                        <outlet property="answerButton3" destination="tSr-L1-nxx" id="9NS-BP-PAU"/>
+                        <outlet property="answerButton4" destination="E1r-Dj-hlH" id="R8t-gp-Euu"/>
+                        <outlet property="questionsLabel" destination="2GC-qb-wd8" id="iAC-pj-IfV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gH-qQ-vBV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763.7681159420292" y="126.5625"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="x8u-uM-aDJ">
             <objects>
