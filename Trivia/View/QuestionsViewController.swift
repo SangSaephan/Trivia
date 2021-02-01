@@ -49,7 +49,9 @@ class QuestionsViewController: UIViewController {
         guard questions.count - 1 > 0 else { return }
         
         let random = Int.random(in: 0...questions.count - 1)
-        questionsLabel.text = questions[random].question
+        questionsLabel.text = viewModel?.setText(word: questions[random].question)
+        
+        print(questions[random].question)
         
         var answers = [questions[random].correct_answer,
                        questions[random].incorrect_answers[0]
@@ -66,8 +68,8 @@ class QuestionsViewController: UIViewController {
             
             answers.shuffle()
             
-            answerButton2.setTitle(answers[0], for: .normal)
-            answerButton3.setTitle(answers[1], for: .normal)
+            answerButton2.setTitle(viewModel?.setText(word: answers[0]), for: .normal)
+            answerButton3.setTitle(viewModel?.setText(word: answers[1]), for: .normal)
         } else {
             [answerButton1, answerButton2, answerButton3, answerButton4].forEach {
                 $0!.isHidden = false
@@ -80,10 +82,10 @@ class QuestionsViewController: UIViewController {
             
             print(answers)
             
-            answerButton1.setTitle(answers[0], for: .normal)
-            answerButton2.setTitle(answers[1], for: .normal)
-            answerButton3.setTitle(answers[2], for: .normal)
-            answerButton4.setTitle(answers[3], for: .normal)
+            answerButton1.setTitle(viewModel?.setText(word: answers[0]), for: .normal)
+            answerButton2.setTitle(viewModel?.setText(word: answers[1]), for: .normal)
+            answerButton3.setTitle(viewModel?.setText(word: answers[2]), for: .normal)
+            answerButton4.setTitle(viewModel?.setText(word: answers[3]), for: .normal)
         }
         
         for i in 0 ..< answers.count {

@@ -22,4 +22,16 @@ class QuestionsViewModel {
             completion(questions)
         }
     }
+    
+    func setText(word: String) -> String {
+        
+        let data = Data(word.utf8)
+        
+        if let attributedString =  try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil) {
+            
+            return attributedString.string
+        }
+        
+        return ""
+    }
 }

@@ -35,7 +35,7 @@ class NetworkManager {
     }
     
     func fetchQuestionsByCategory(categoryID: Int, _ completion: @escaping ([Question]) -> ()) {
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=25&category=\(categoryID)") else { return }
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=10&category=\(categoryID)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
