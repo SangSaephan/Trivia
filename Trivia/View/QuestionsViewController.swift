@@ -41,6 +41,8 @@ class QuestionsViewController: UIViewController {
         [answerButton1, answerButton2, answerButton3, answerButton4].forEach {
             $0!.setTitle("", for: .normal)
             $0!.layer.cornerRadius = $0!.bounds.size.height / 2
+            $0!.titleLabel?.numberOfLines = 0
+            $0!.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             $0!.isHidden = true
         }
     }
