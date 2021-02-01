@@ -19,6 +19,7 @@
 		4ECF29F825C4F2DB0074F7DA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF29F725C4F2DB0074F7DA /* Questions.swift */; };
 		4ECF29FC25C4F5B10074F7DA /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF29FB25C4F5B10074F7DA /* QuestionsViewController.swift */; };
 		4ECF29FE25C4FC0E0074F7DA /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF29FD25C4FC0E0074F7DA /* QuestionsViewModel.swift */; };
+		4ECF2A0025C873570074F7DA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF29FF25C873570074F7DA /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4ECF29F725C4F2DB0074F7DA /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		4ECF29FB25C4F5B10074F7DA /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		4ECF29FD25C4FC0E0074F7DA /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
+		4ECF29FF25C873570074F7DA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				4ECF29E925C4CDD70074F7DA /* CategoriesViewController.swift */,
 				4ECF29FB25C4F5B10074F7DA /* QuestionsViewController.swift */,
+				4ECF29FF25C873570074F7DA /* UIColor+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				4ECF29F625C4E1CF0074F7DA /* CategoriesViewModel.swift in Sources */,
 				4ECF29D825C4CCFD0074F7DA /* SceneDelegate.swift in Sources */,
 				4ECF29FE25C4FC0E0074F7DA /* QuestionsViewModel.swift in Sources */,
+				4ECF2A0025C873570074F7DA /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

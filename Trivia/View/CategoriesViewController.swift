@@ -19,6 +19,15 @@ class CategoriesViewController: UIViewController {
         
         title = "Trivia Categories"
         
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.warriorsYellow]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.warriorsYellow]
+        navBarAppearance.backgroundColor = UIColor.warriorsBlue
+        
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -40,6 +49,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
+        cell.textLabel?.textColor = .white
         cell.textLabel?.text = viewModel.categories?[indexPath.row].name
         
         return cell
