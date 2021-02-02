@@ -20,6 +20,10 @@
 		4ECF29FC25C4F5B10074F7DA /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF29FB25C4F5B10074F7DA /* QuestionsViewController.swift */; };
 		4ECF29FE25C4FC0E0074F7DA /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF29FD25C4FC0E0074F7DA /* QuestionsViewModel.swift */; };
 		4ECF2A0025C873570074F7DA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF29FF25C873570074F7DA /* UIColor+Extension.swift */; };
+		4ECF2A0325C9569D0074F7DA /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF2A0225C9569D0074F7DA /* AlertView.xib */; };
+		4ECF2A0525C956DB0074F7DA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF2A0425C956DA0074F7DA /* AlertView.swift */; };
+		4ECF2A0825C968C90074F7DA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF2A0625C968C90074F7DA /* AlertViewController.swift */; };
+		4ECF2A0925C968C90074F7DA /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF2A0725C968C90074F7DA /* AlertViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		4ECF29FB25C4F5B10074F7DA /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		4ECF29FD25C4FC0E0074F7DA /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
 		4ECF29FF25C873570074F7DA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4ECF2A0225C9569D0074F7DA /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		4ECF2A0425C956DA0074F7DA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		4ECF2A0625C968C90074F7DA /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		4ECF2A0725C968C90074F7DA /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +113,23 @@
 		4ECF29F925C4F50C0074F7DA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4ECF2A0125C9567F0074F7DA /* AlertView */,
 				4ECF29E925C4CDD70074F7DA /* CategoriesViewController.swift */,
 				4ECF29FB25C4F5B10074F7DA /* QuestionsViewController.swift */,
 				4ECF29FF25C873570074F7DA /* UIColor+Extension.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4ECF2A0125C9567F0074F7DA /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF2A0225C9569D0074F7DA /* AlertView.xib */,
+				4ECF2A0425C956DA0074F7DA /* AlertView.swift */,
+				4ECF2A0625C968C90074F7DA /* AlertViewController.swift */,
+				4ECF2A0725C968C90074F7DA /* AlertViewController.xib */,
+			);
+			path = AlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ECF29E225C4CD030074F7DA /* LaunchScreen.storyboard in Resources */,
+				4ECF2A0325C9569D0074F7DA /* AlertView.xib in Resources */,
 				4ECF29DF25C4CD030074F7DA /* Assets.xcassets in Resources */,
 				4ECF29DD25C4CCFD0074F7DA /* Main.storyboard in Resources */,
+				4ECF2A0925C968C90074F7DA /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,9 +208,11 @@
 				4ECF29D625C4CCFD0074F7DA /* AppDelegate.swift in Sources */,
 				4ECF29EC25C4D2720074F7DA /* Categories.swift in Sources */,
 				4ECF29FC25C4F5B10074F7DA /* QuestionsViewController.swift in Sources */,
+				4ECF2A0525C956DB0074F7DA /* AlertView.swift in Sources */,
 				4ECF29F825C4F2DB0074F7DA /* Questions.swift in Sources */,
 				4ECF29EF25C4D3E30074F7DA /* NetworkManager.swift in Sources */,
 				4ECF29EA25C4CDD70074F7DA /* CategoriesViewController.swift in Sources */,
+				4ECF2A0825C968C90074F7DA /* AlertViewController.swift in Sources */,
 				4ECF29F625C4E1CF0074F7DA /* CategoriesViewModel.swift in Sources */,
 				4ECF29D825C4CCFD0074F7DA /* SceneDelegate.swift in Sources */,
 				4ECF29FE25C4FC0E0074F7DA /* QuestionsViewModel.swift in Sources */,
