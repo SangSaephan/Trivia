@@ -16,6 +16,9 @@ class AlertView: UIView {
     }
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet var imageLabel: UIImageView!
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var dismissButton: UIButton!
     
     var answer: Answer?
     
@@ -33,9 +36,15 @@ class AlertView: UIView {
     
     private func initialize() {
         Bundle.main.loadNibNamed("AlertView", owner: self, options: nil)
+        
         addSubview(contentView)
+        
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        dismissButton.layer.cornerRadius = dismissButton.bounds.size.height / 2
+        
+        self.isHidden = true
     }
 
 }
