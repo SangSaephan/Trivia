@@ -27,11 +27,6 @@ class QuestionsViewController: UIViewController {
         
         if let id = categoryID {
             viewModel = QuestionsViewModel(categoryID: id, viewController: self)
-            viewModel?.fetchQuestions(categoryID: id, { (questions) in
-                DispatchQueue.main.async {
-                    self.updateUI(questions: questions)
-                }
-            })
         }
     }
     
@@ -102,32 +97,18 @@ class QuestionsViewController: UIViewController {
     }
     
     @IBAction func answerButtonTapped(_ sender: UIButton) {
-        var title = ""
         var message = ""
+        var answerStatus: AlertView.Answer
         
         if correctAnswer == sender.tag {
-            title = "CORRECT!"
-            message = "That's the right answer!"
+            message = "That's the correct answer!"
+            answerStatus = .correct
         } else {
-            title = "INCORRECT!"
-            message = "Sorry, that is not the right answer."
+            message = "Sorry, that is not the correct answer."
+            answerStatus = .incorrect
         }
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert in
-            if title == "CORRECT!" {
-                if let id = self.categoryID {
-                    self.viewModel?.fetchQuestions(categoryID: id, { (questions) in
-                        DispatchQueue.main.async {
-                            self.updateUI(questions: questions)
-                        }
-                    })
-                }
-            }
-        }))
-        
-        present(alertController, animated: true, completion: nil)
+        viewModel?.presentAlert(message: message, answerStatus: answerStatus)
     }
     
 

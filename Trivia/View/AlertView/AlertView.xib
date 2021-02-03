@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Ybo-Cx-6jS"/>
                 <outlet property="dismissButton" destination="4Qy-Dt-k5Y" id="2Ob-BR-6K8"/>
-                <outlet property="imageLabel" destination="fSe-8i-y13" id="Uw9-Z9-qhp"/>
+                <outlet property="imageView" destination="fSe-8i-y13" id="TzV-Dd-vT4"/>
                 <outlet property="messageLabel" destination="1gf-d1-GhU" id="ROv-vp-TvK"/>
             </connections>
         </placeholder>
@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="206" height="323"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fSe-8i-y13">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fSe-8i-y13">
                     <rect key="frame" x="73" y="64" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="3nD-0z-Eym"/>

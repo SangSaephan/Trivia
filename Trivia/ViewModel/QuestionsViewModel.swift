@@ -10,11 +10,19 @@ import Foundation
 
 class QuestionsViewModel {
     var questions: [Question]?
+    var categoryID: Int?
     
     weak var questionsVC: QuestionsViewController?
     
     init(categoryID: Int, viewController: QuestionsViewController) {
+        self.categoryID = categoryID
         self.questionsVC = viewController
+        
+        fetchQuestions(categoryID: categoryID) { (questions) in
+            DispatchQueue.main.async {
+                self.questionsVC?.updateUI(questions: questions)
+            }
+        }
     }
     
     func fetchQuestions(categoryID: Int, _ completion: @escaping ([Question]) -> ()) {
@@ -33,5 +41,23 @@ class QuestionsViewModel {
         }
         
         return ""
+    }
+    
+    func presentAlert(message: String, answerStatus: AlertView.Answer) {
+        let alert = AlertViewController(message: message, answerStatus: answerStatus)
+        alert.modalPresentationStyle = .overCurrentContext
+        alert.addAction = {
+            if answerStatus == .correct {
+                if let id = self.categoryID {
+                    self.fetchQuestions(categoryID: id, { (questions) in
+                        DispatchQueue.main.async {
+                            self.questionsVC?.updateUI(questions: questions)
+                        }
+                    })
+                }
+            }
+        }
+        
+        questionsVC?.present(alert, animated: false, completion: nil)
     }
 }

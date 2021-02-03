@@ -16,7 +16,7 @@ class AlertView: UIView {
     }
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet var imageLabel: UIImageView!
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var dismissButton: UIButton!
     
