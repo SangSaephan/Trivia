@@ -35,6 +35,7 @@ class AlertView: UIView {
     }
     
     private func initialize() {
+        // Source: https://medium.com/better-programming/swift-3-creating-a-custom-view-from-a-xib-ecdfe5b3a960
         Bundle.main.loadNibNamed("AlertView", owner: self, options: nil)
         
         addSubview(contentView)

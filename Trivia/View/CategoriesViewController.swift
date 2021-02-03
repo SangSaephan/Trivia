@@ -19,10 +19,16 @@ class CategoriesViewController: UIViewController {
         
         title = "Trivia Categories"
         
+        // Source: https://medium.com/better-programming/swift-gradient-in-4-lines-of-code-6f81809da741
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.warriorsBlue?.cgColor ?? UIColor.blue.cgColor, UIColor.warriorsYellow?.cgColor ?? UIColor.yellow.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.warriorsYellow]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.warriorsYellow]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.warriorsYellow ?? UIColor.yellow]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.warriorsYellow ?? UIColor.yellow]
         navBarAppearance.backgroundColor = UIColor.warriorsBlue
         
         navigationController?.navigationBar.standardAppearance = navBarAppearance

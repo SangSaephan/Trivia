@@ -40,6 +40,12 @@ class QuestionsViewController: UIViewController {
             $0!.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             $0!.isHidden = true
         }
+        
+        // Source: https://medium.com/better-programming/swift-gradient-in-4-lines-of-code-6f81809da741
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.warriorsBlue?.cgColor ?? UIColor.blue.cgColor, UIColor.warriorsYellow?.cgColor ?? UIColor.yellow.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     func updateUI(questions: [Question]) {
@@ -101,7 +107,7 @@ class QuestionsViewController: UIViewController {
         var answerStatus: AlertView.Answer
         
         if correctAnswer == sender.tag {
-            message = "That's the correct answer!"
+            message = "That's the correct answer! Good job!"
             answerStatus = .correct
         } else {
             message = "Sorry, that is not the correct answer."
