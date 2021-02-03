@@ -24,9 +24,7 @@ class NetworkManager {
                 do {
                     let categoriesJSON = try JSONDecoder().decode(Categories.self, from: data)
                     
-                    DispatchQueue.main.async {
-                        completion(categoriesJSON.trivia_categories)
-                    }
+                    completion(categoriesJSON.trivia_categories)
                 } catch {
                     fatalError("Could not parse categories JSON.")
                 }

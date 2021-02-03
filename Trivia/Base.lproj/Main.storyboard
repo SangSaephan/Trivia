@@ -67,7 +67,7 @@
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phX-ms-zdB">
                                 <rect key="frame" x="77" y="486" width="260" height="60"/>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="4Vf-LA-W18"/>
                                     <constraint firstAttribute="width" constant="260" id="uiS-Je-liO"/>
@@ -81,7 +81,7 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLK-Ps-T5Z">
                                 <rect key="frame" x="77" y="556" width="260" height="60"/>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="b5H-YG-wiw"/>
                                     <constraint firstAttribute="height" constant="60" id="u3d-vS-dnz"/>
@@ -95,7 +95,7 @@
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSr-L1-nxx">
                                 <rect key="frame" x="77" y="626" width="260" height="60"/>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="1yh-gg-ps2"/>
                                     <constraint firstAttribute="height" constant="60" id="aWC-DE-TrQ"/>
@@ -109,7 +109,7 @@
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1r-Dj-hlH">
                                 <rect key="frame" x="77" y="696" width="260" height="60"/>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.24705882352941178" blue="0.15294117647058825" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="4sj-Pl-ddD"/>
                                     <constraint firstAttribute="width" constant="260" id="sBL-K8-3iB"/>
