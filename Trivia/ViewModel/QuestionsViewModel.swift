@@ -9,7 +9,6 @@
 import Foundation
 
 class QuestionsViewModel {
-    var questions: [Question]?
     var categoryID: Int?
     
     weak var questionsVC: QuestionsViewController?
@@ -18,14 +17,14 @@ class QuestionsViewModel {
         self.categoryID = categoryID
         self.questionsVC = viewController
         
-        fetchQuestions(categoryID: categoryID) { (questions) in
+        fetchQuestions(categoryID: categoryID) { [weak self] (questions) in
             DispatchQueue.main.async {
-                self.questionsVC?.updateUI(questions: questions)
+                self?.questionsVC?.updateUI(questions: questions)
             }
         }
     }
     
-    func fetchQuestions(categoryID: Int, _ completion: @escaping ([Question]) -> ()) {
+    private func fetchQuestions(categoryID: Int, _ completion: @escaping ([Question]) -> ()) {
         NetworkManager.shared.fetchQuestionsByCategory(categoryID: categoryID) { (questions) in
             completion(questions)
         }
