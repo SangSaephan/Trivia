@@ -17,6 +17,15 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUI()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        viewModel = CategoriesViewModel(viewController: self)
+    }
+    
+    func configureUI() {
         title = "Trivia Categories"
         
         // Source: https://medium.com/better-programming/swift-gradient-in-4-lines-of-code-6f81809da741
@@ -33,11 +42,6 @@ class CategoriesViewController: UIViewController {
         
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        viewModel = CategoriesViewModel(viewController: self)
     }
 
 }

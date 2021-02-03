@@ -20,8 +20,6 @@ class AlertView: UIView {
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var dismissButton: UIButton!
     
-    var answer: Answer?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -38,10 +36,13 @@ class AlertView: UIView {
         // Source: https://medium.com/better-programming/swift-3-creating-a-custom-view-from-a-xib-ecdfe5b3a960
         Bundle.main.loadNibNamed("AlertView", owner: self, options: nil)
         
+        self.backgroundColor = .clear
+        
         addSubview(contentView)
         
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        contentView.layer.cornerRadius = 10
         
         dismissButton.layer.cornerRadius = dismissButton.bounds.size.height / 2
         
