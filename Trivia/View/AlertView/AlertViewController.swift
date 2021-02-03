@@ -12,16 +12,16 @@ class AlertViewController: UIViewController {
     
     @IBOutlet private var alertView: AlertView!
     
-    private var message: String!
-    private var answerStatus: AlertView.Answer!
+    private var message: String
+    private var answerStatus: AlertView.Answer
     
     var addAction: (() -> ())?
     
     init(message: String, answerStatus: AlertView.Answer) {
-        super.init(nibName: nil, bundle: nil)
-        
         self.message = message
         self.answerStatus = answerStatus
+        
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -47,7 +47,7 @@ class AlertViewController: UIViewController {
         }, completion: nil)
     }
     
-    @objc func buttonTapped() {
+    @objc private func buttonTapped() {
         addAction?()
         dismiss(animated: true, completion: nil)
     }

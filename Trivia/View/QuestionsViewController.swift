@@ -30,7 +30,7 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    func configureUI() {
+    private func configureUI() {
         questionsLabel.text = ""
         
         [answerButton1, answerButton2, answerButton3, answerButton4].forEach {

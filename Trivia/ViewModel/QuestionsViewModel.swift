@@ -45,12 +45,12 @@ class QuestionsViewModel {
     func presentAlert(message: String, answerStatus: AlertView.Answer) {
         let alert = AlertViewController(message: message, answerStatus: answerStatus)
         alert.modalPresentationStyle = .overCurrentContext
-        alert.addAction = {
+        alert.addAction = { [weak self] in
             if answerStatus == .correct {
-                if let id = self.categoryID {
-                    self.fetchQuestions(categoryID: id, { (questions) in
+                if let id = self?.categoryID {
+                    self?.fetchQuestions(categoryID: id, { (questions) in
                         DispatchQueue.main.async {
-                            self.questionsVC?.updateUI(questions: questions)
+                            self?.questionsVC?.updateUI(questions: questions)
                         }
                     })
                 }

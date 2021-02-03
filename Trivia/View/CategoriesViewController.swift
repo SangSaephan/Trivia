@@ -25,7 +25,7 @@ class CategoriesViewController: UIViewController {
         viewModel = CategoriesViewModel(viewController: self)
     }
     
-    func configureUI() {
+    private func configureUI() {
         title = "Trivia Categories"
         
         // Source: https://medium.com/better-programming/swift-gradient-in-4-lines-of-code-6f81809da741
