@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertViewController" customModule="Trivia" customModuleProvider="target">
+            <connections>
+                <outlet property="alertView" destination="hdr-Ud-JPV" id="Ual-Q5-KKq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPY-1p-eOZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdr-Ud-JPV" customClass="AlertView" customModule="Trivia" customModuleProvider="target">
+                    <rect key="frame" x="87" y="297.5" width="240" height="311"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="FNe-xJ-QhM"/>
+                        <constraint firstAttribute="height" constant="311" id="w72-ZH-d3v"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="iPY-1p-eOZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GVh-5p-RLQ"/>
+                <constraint firstItem="iPY-1p-eOZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="R4x-dB-yDt"/>
+                <constraint firstAttribute="bottom" secondItem="iPY-1p-eOZ" secondAttribute="bottom" id="WQL-hZ-7N5"/>
+                <constraint firstItem="iPY-1p-eOZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="c5D-es-gvq"/>
+                <constraint firstItem="hdr-Ud-JPV" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="iUV-PN-4tc"/>
+                <constraint firstItem="hdr-Ud-JPV" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="y9d-UM-rfn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+        </view>
+    </objects>
+</document>
