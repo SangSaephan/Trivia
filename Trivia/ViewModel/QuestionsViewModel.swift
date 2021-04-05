@@ -17,16 +17,27 @@ class QuestionsViewModel {
         self.categoryID = categoryID
         self.questionsVC = viewController
         
-        fetchQuestions(categoryID: categoryID) { [weak self] (questions) in
-            DispatchQueue.main.async {
-                self?.questionsVC?.updateUI(questions: questions)
-            }
+        fetchQuestions(categoryID: categoryID) { [weak self] (result) in
+            self?.handleFetchResult(result: result)
         }
     }
     
-    private func fetchQuestions(categoryID: Int, _ completion: @escaping ([Question]) -> ()) {
-        NetworkManager.shared.fetchQuestionsByCategory(categoryID: categoryID) { (questions) in
-            completion(questions)
+    private func fetchQuestions(categoryID: Int, _ completion: @escaping (Result<[Question], NetworkError>) -> ()) {
+        NetworkManager.shared.fetchQuestionsByCategory(categoryID: categoryID) { (result) in
+            completion(result)
+        }
+    }
+    
+    private func handleFetchResult(result: Result<[Question], NetworkError>) {
+        switch result {
+             
+        case .success(let questions):
+            DispatchQueue.main.async {
+                self.questionsVC?.updateUI(questions: questions)
+            }
+            
+        case .failure(let error):
+            print(error.localizedDescription)
         }
     }
     
@@ -48,10 +59,8 @@ class QuestionsViewModel {
         alert.addAction = { [weak self] in
             if answerStatus == .correct {
                 if let id = self?.categoryID {
-                    self?.fetchQuestions(categoryID: id, { (questions) in
-                        DispatchQueue.main.async {
-                            self?.questionsVC?.updateUI(questions: questions)
-                        }
+                    self?.fetchQuestions(categoryID: id, { (result) in
+                        self?.handleFetchResult(result: result)
                     })
                 }
             }

@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    case badURL
+    case badJSONParse
+}
+
 class NetworkManager {
     
     private let categoriesURL = "https://opentdb.com/api_category.php"
@@ -16,33 +21,39 @@ class NetworkManager {
     
     private init() { }
     
-    func fetchCategories(_ completion: @escaping ([Category]) -> ()) {
-        guard let url = URL(string: categoriesURL) else { return }
+    func fetchCategories(_ completion: @escaping (Result<[Category], NetworkError>) -> ()) {
+        guard let url = URL(string: categoriesURL) else {
+            completion(.failure(.badURL))
+            return
+        }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
                 do {
                     let categoriesJSON = try JSONDecoder().decode(Categories.self, from: data)
                     
-                    completion(categoriesJSON.trivia_categories)
+                    completion(.success(categoriesJSON.trivia_categories))
                 } catch {
-                    fatalError("Could not parse categories JSON.")
+                    completion(.failure(.badJSONParse))
                 }
             }
         }.resume()
     }
     
-    func fetchQuestionsByCategory(categoryID: Int, _ completion: @escaping ([Question]) -> ()) {
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=10&category=\(categoryID)") else { return }
+    func fetchQuestionsByCategory(categoryID: Int, _ completion: @escaping (Result<[Question], NetworkError>) -> ()) {
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=10&category=\(categoryID)") else {
+            completion(.failure(.badURL))
+            return
+        }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
                 do {
                     let questionsJSON = try JSONDecoder().decode(Questions.self, from: data)
                     
-                    completion(questionsJSON.results)
+                    completion(.success(questionsJSON.results))
                 } catch {
-                    fatalError("Could not parse questions JSON.")
+                    completion(.failure(.badJSONParse))
                 }
             }
         }.resume()

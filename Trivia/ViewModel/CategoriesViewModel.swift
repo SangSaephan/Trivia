@@ -16,17 +16,24 @@ class CategoriesViewModel {
     init(viewController: CategoriesViewController) {
         self.categoriesVC = viewController
         
-        fetchCategories { [weak self] (categories) in
-            DispatchQueue.main.async {
-                self?.categories = categories.sorted(by: {$0.name < $1.name})
-                self?.categoriesVC?.tableView.reloadData()
+        fetchCategories { [weak self] (result) in
+            switch result {
+                
+            case .success(let categories):
+                DispatchQueue.main.async {
+                    self?.categories = categories.sorted(by: {$0.name < $1.name})
+                    self?.categoriesVC?.tableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
     
-    private func fetchCategories(_ completion: @escaping ([Category]) -> ()) {
-        NetworkManager.shared.fetchCategories { (categories) in
-            completion(categories)
+    private func fetchCategories(_ completion: @escaping (Result<[Category], NetworkError>) -> ()) {
+        NetworkManager.shared.fetchCategories { (result) in
+            completion(result)
         }
     }
 }
