@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol QuestionsViewControllerDelegate: class {
+    func updateQuestions(questions: [Question])
+    func presentAlert(viewController: UIViewController)
+}
+
 class QuestionsViewController: UIViewController {
 
     @IBOutlet var questionsLabel: UILabel!
@@ -48,7 +53,7 @@ class QuestionsViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func updateUI(questions: [Question]) {
+    private func updateUI(questions: [Question]) {
         guard questions.count - 1 > 0 else { return }
         
         let random = Int.random(in: 0...questions.count - 1)
@@ -116,6 +121,14 @@ class QuestionsViewController: UIViewController {
         
         viewModel?.presentAlert(message: message, answerStatus: answerStatus)
     }
-    
+}
 
+extension QuestionsViewController: QuestionsViewControllerDelegate {
+    func updateQuestions(questions: [Question]) {
+        updateUI(questions: questions)
+    }
+    
+    func presentAlert(viewController: UIViewController) {
+        present(viewController, animated: false, completion: nil)
+    }
 }

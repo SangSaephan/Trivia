@@ -11,9 +11,9 @@ import Foundation
 class CategoriesViewModel {
     var categories: [Category]?
     
-    weak var categoriesVC: CategoriesViewController?
+    weak var categoriesVC: CategoriesViewControllerDelegate?
     
-    init(viewController: CategoriesViewController) {
+    init(viewController: CategoriesViewControllerDelegate) {
         self.categoriesVC = viewController
         
         fetchCategories { [weak self] (result) in
@@ -22,7 +22,7 @@ class CategoriesViewModel {
             case .success(let categories):
                 DispatchQueue.main.async {
                     self?.categories = categories.sorted(by: {$0.name < $1.name})
-                    self?.categoriesVC?.tableView.reloadData()
+                    self?.categoriesVC?.updateTableView()
                 }
                 
             case .failure(let error):

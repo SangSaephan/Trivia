@@ -11,9 +11,9 @@ import Foundation
 class QuestionsViewModel {
     var categoryID: Int?
     
-    weak var questionsVC: QuestionsViewController?
+    weak var questionsVC: QuestionsViewControllerDelegate?
     
-    init(categoryID: Int, viewController: QuestionsViewController) {
+    init(categoryID: Int, viewController: QuestionsViewControllerDelegate) {
         self.categoryID = categoryID
         self.questionsVC = viewController
         
@@ -33,7 +33,7 @@ class QuestionsViewModel {
              
         case .success(let questions):
             DispatchQueue.main.async {
-                self.questionsVC?.updateUI(questions: questions)
+                self.questionsVC?.updateQuestions(questions: questions)
             }
             
         case .failure(let error):
@@ -66,6 +66,6 @@ class QuestionsViewModel {
             }
         }
         
-        questionsVC?.present(alert, animated: false, completion: nil)
+        questionsVC?.presentAlert(viewController: alert)
     }
 }

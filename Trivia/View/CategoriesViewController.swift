@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CategoriesViewControllerDelegate: class {
+    func updateTableView()
+}
+
 class CategoriesViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -67,5 +71,11 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         
         navigationController?.pushViewController(questionsVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension CategoriesViewController: CategoriesViewControllerDelegate {
+    func updateTableView() {
+        tableView.reloadData()
     }
 }
