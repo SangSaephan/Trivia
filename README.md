@@ -5,6 +5,7 @@ The goal of this project was to test my knowledge of MVVM.
 
 ### Features Added
 - Separation of layers (Model, View, ViewModel)
+- Dependency Injection?
 - Custom AlertController:
 
 ![Screen Shot 2021-03-31 at 2 16 55 PM](https://user-images.githubusercontent.com/12403013/113212626-dfbebb00-922b-11eb-97a1-5b67825ae64b.png)
@@ -13,4 +14,3 @@ The goal of this project was to test my knowledge of MVVM.
 
 ### Features Missing
 - Data binding
-- Dependency Injection
